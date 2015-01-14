@@ -22,6 +22,13 @@ class DmozItem(Item):
 class LoginItem(Item):
     # define the fields for your item here like:
     url = Field()
+
+class DoubanItem(Item):
+    title   = Field()
+    autho   =  Field()
+    date = Field()
+    conten  = Field()
+    # url     = Field()
 # '创建item并将所存储数据以两种方式打印出来'
 # webbot =WebbotItem(name='牛奶吧',id=1)
 # print(webbot)
