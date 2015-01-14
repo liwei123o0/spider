@@ -28,7 +28,7 @@ class DoubanItem(Item):
     autho   =  Field()
     date = Field()
     conten  = Field()
-    # url     = Field()
+    url     = Field()
 # '创建item并将所存储数据以两种方式打印出来'
 # webbot =WebbotItem(name='牛奶吧',id=1)
 # print(webbot)
