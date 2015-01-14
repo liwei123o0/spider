@@ -12,7 +12,7 @@ class TiebaSpider(CrawlSpider):
     allowed_domains =['ssfeng.com']
     start_urls=['http://bbs.ssfeng.com/bbs/']
     rules = [
-        Rule(sle(restrict_xpaths=("(//h2/a)[7]")),follow=True), #提取网页URL连接并进行跟进处理页面信息
+        Rule(sle(restrict_xpaths=("//h2/a")),follow=True), #提取网页URL连接并进行跟进处理页面信息
         Rule(sle(restrict_xpaths=("//span[contains(@id,'thread')]/a")),callback='parse_item'), #纠结很久的问题，不能跟进采集原因是不能写parse函数，需要改名字
     ]
     def parse_item(self, response):
