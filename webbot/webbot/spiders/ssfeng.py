@@ -25,10 +25,13 @@ class TiebaSpider(CrawlSpider):
         item['conten'] ="".join(hxs.xpath("(//td[@class='t_msgfont'])[1]/text()").extract())
         item['url']=response.url
         print('url:'+item['url'])
-        print('title:'+item['title']).encode('gb2312')
-        print('autho:'+item['autho']).encode('gb2312')
-        print('date:'+item['date']).encode('gb2312')
-        print('conten:'+item['conten']).encode('gb2312')
+        print('title:'+item['title']).encode('gb2312',errors='ignore')
+        print('autho:'+item['autho']).encode('gb2312',errors='ignore')
+        print('date:'+item['date']).encode('gb2312',errors='ignore')
+        print('conten:'+item['conten']).encode('gb2312',errors='ignore')
+
+        if not hxs.select(response):
+            yield Request(url=response.url, dont_filter=True)
 
         # return item
 
